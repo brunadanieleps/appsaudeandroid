@@ -1,0 +1,62 @@
+#:include kv/Menu_Principal.kv
+#:include kv/Visualizar_Dados.kv
+#:include kv/Entrar.kv
+#:include kv/Consultas.kv
+#:include kv/Exames.kv
+#:include kv/Vacinacao.kv
+#:include kv/PreencherCadastro.kv
+#:include kv/Editar_Dados.kv
+#:include kv/Adicionar_Vacinas.kv
+#:include kv/Adicionar_Consultas.kv
+#:include kv/Adicionar_Exames.kv
+
+
+FloatLayout:
+    canvas:
+        Color:
+            #rgb: (0.83,2.18,2.24,0.8)
+            rgb: (0,0,0,1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    ScreenManager
+        id: screen_manager
+        Entrar:
+            name: "Entrar"
+            id: Entrar
+        Menu_Principal:
+            name: "Menu_Principal"
+            id: Menu_Principal
+        Visualizar_Dados:
+            name: "Visualizar_Dados"
+            id: Visualizar_Dados
+        Consultas:
+            name: "Consultas"
+            id: Consultas
+        Exames:
+            name: "Exames"
+            id: Exames
+        Vacinacao:
+            name: "Vacinacao"
+            id: Vacinacao
+        PreencherCadastro:
+            name: "PreencherCadastro"
+            id: PreencherCadastro
+        Editar_Dados:
+            name: "Editar_Dados"
+            id: Editar_Dados
+        Adicionar_Vacinacao:
+            name: "Adicionar_Vacinacao"
+            id: Adicionar_Vacinacao
+        Adicionar_Consultas:
+            name: "Adicionar_Consultas"
+            id: Adicionar_Consultas
+        Adicionar_Exames:
+            name: "Adicionar_Exames"
+            id: Adicionar_Exames
+        
+        
+
+
+
+

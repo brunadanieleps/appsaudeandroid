@@ -1,0 +1,96 @@
+<Editar_Dados>:
+    FloatLayout:
+        Image:
+            pos_hint: {"right":1, "top":0.9}
+            size_hint: 1, 0.2
+            source: "icones/logo.png"
+        Label: 
+            pos_hint: {"right":0.9, "top":0.7}
+            size_hint: 0.8, 0.1
+            text: "[b][color=#8DC6EA]Atualize seus dados cadastrais[/color][/b]"
+            markup: True
+        Label: 
+            pos_hint: {"right":0.9, "top":0.65}
+            size_hint: 0.8, 0.1
+            id: nome_paciente
+            markup: True
+
+        GridLayout:
+            pos_hint: {"right":0.95, "top":0.62}
+            size_hint: 0.9, 0.4
+            cols: 2 
+            rows: 10
+            halign: 'right'
+
+            Label:
+                text: 'CPF:'
+                size_hint_x: None
+                width: 120
+                size: self.texture_size
+            TextInput:       
+                id: cpf
+            Label:
+                text: 'Data de nascimento:'
+                size_hint_x: None
+                width: 120
+                size: self.texture_size
+            TextInput:       
+                id: data_nascimento
+            Label:
+                text: 'Endereço:'
+                size_hint_x: None
+                width: 120
+                size: self.texture_size
+            TextInput:       
+                id: endereco
+            Label:
+                text: 'Município:'
+                size_hint_x: None
+                width: 120
+                size: self.texture_size
+            TextInput:       
+                id: municipio
+            Label:
+                text: 'Estado:'
+                size_hint_x: None
+                width: 120
+                size: self.texture_size
+            TextInput:       
+                id: estado
+            Label:
+                text: 'Cartão SUS:'
+                size_hint_x: None
+                width: 120
+                size: self.texture_size
+            TextInput:       
+                id: cartao_sus
+            Label:
+                text: 'Nome do plano:'
+                size_hint_x: None
+                width: 120
+                size: self.texture_size
+            TextInput:       
+                id: nome_plano
+            Label:
+                text: 'Nº Carteirinha:'
+                size_hint_x: None
+                width: 120
+                size: self.texture_size
+            TextInput:       
+                id: n_carteirinha
+        Button:
+            pos_hint: {"right":0.95, "top":0.2}
+            size_hint: 0.90, 0.05
+            text: "Cadastrar"
+            on_release: app.firebase.atualizar_dados_cadastrais(cpf.text,data_nascimento.text,endereco.text,municipio.text,estado.text,cartao_sus.text,nome_plano.text,n_carteirinha.text)
+        Button:
+            pos_hint: {"right":0.95, "top":0.13}
+            size_hint: 0.90, 0.05
+            text: "Cancelar"
+            on_release: app.mudar_tela("Visualizar_Dados")
+
+
+            
+
+
+

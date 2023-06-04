@@ -1,0 +1,74 @@
+<Menu_Principal>:
+    FloatLayout:
+        ImageButton:
+            pos_hint: {"right":0.33, "top":1}
+            size_hint: 0.2, 0.3
+            source: "icones/foto_paciente_Bruna.jpg"
+            on_release: app.mudar_tela("Visualizar_Dados")
+            id: foto_perfil_menu
+        Label:
+            pos_hint: {"right":0.98, "top":1}
+            size_hint: 0.6, 0.3
+            text: "\bNome:\b Bruna Daniele de Paula Salgado\nData de Nascimento: 06/08/1999\n22 anos\nEndereço: Rua Roma, nº 673\nSão José dos Campos"
+            id: dados_paciente
+            #canvas.before:
+            #       rgb: (1,1,1,1)
+        Image:
+            pos_hint: {"right":0.5, "top":0.8}
+            size_hint: 0.5, 0.21
+            source: "icones/linha.png"
+        Image:
+            pos_hint: {"right":1, "top":0.8}
+            size_hint: 0.5, 0.21
+            source: "icones/linha.png"
+
+        FloatLayout:
+            pos_hint: {"right":1, "top":0.675}
+            size_hint: 1, 0.53
+            canvas:
+                Color:
+                    rgb: (1,1,1,1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            ImageButton:
+                pos_hint: {"right":1, "top":1}
+                size_hint: 1, 0.5
+                source: "icones/botvacina.png"
+                on_release: app.mudar_tela("Vacinacao")
+            ImageButton:
+                pos_hint: {"right":1, "top":0.65}
+                size_hint: 1, 0.28
+                source: "icones/botexames.png"
+                on_release: app.mudar_tela("Exames")
+            ImageButton:
+                pos_hint: {"right":1, "top":0.428}
+                size_hint: 1, 0.5
+                source: "icones/botconsultas.png"
+                on_release: app.mudar_tela("Consultas")
+            Image:
+                pos_hint: {"right":0.5, "top":0.14}
+                size_hint: 0.5, 0.21
+                source: "icones/linha.png"
+            Image:
+                pos_hint: {"right":1, "top":0.14}
+                size_hint: 0.5, 0.21
+                source: "icones/linha.png"
+
+        FloatLayout:
+            pos_hint: {"right":1, "top":0.10}
+            size_hint: 1, 0.15
+            canvas:
+                Color:
+                    rgb: (0,0,0,1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            Button:
+                pos_hint: {"right":0.95, "top":0.8}
+                size_hint: 0.90, 0.09
+                text: "Sair"
+                on_release: app.mudar_tela("Entrar")
+        
+
+

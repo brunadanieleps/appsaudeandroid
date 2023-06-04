@@ -1,0 +1,42 @@
+<Entrar>:
+    FloatLayout:
+        Image:
+            pos_hint: {"right":1, "top":0.9}
+            size_hint: 1, 0.3
+            source: "icones/logo.png"
+        Label: 
+            id:mensagem_login
+            pos_hint: {"right":0.9, "top":0.6}
+            size_hint: 0.8, 0.1
+            text: "[color=#000000]Mensagem Usuario[/color]"
+            markup: True
+        Label:
+            pos_hint: {"right":0.3, "top":0.57}
+            size_hint: 0.2, 0.2
+            text: "E-mail:"
+        TextInput:
+            id: email
+            pos_hint: {"right":0.8, "top":0.495}
+            size_hint: 0.5, 0.05
+        Label:
+            pos_hint: {"right":0.3, "top":0.47}
+            size_hint: 0.2, 0.2
+            text: " Senha:"
+        TextInput:
+            id: senha
+            password: True
+            pos_hint: {"right":0.8, "top":0.395}
+            size_hint: 0.5, 0.05
+        ImageButton:
+            pos_hint: {"right":0.9, "top":0.28}
+            size_hint: 0.8, 0.07
+            source: "icones/fazerlogin.png"
+            on_release: app.firebase.fazer_login(email.text,senha.text)
+        ImageButton:
+            pos_hint: {"right":0.9, "top":0.18}
+            size_hint: 0.8, 0.07
+            source: "icones/cadastro.png"
+            on_release: app.firebase.criar_conta(email.text,senha.text)
+            #voltar aqui depois
+            #on_release: app.mudar_tela("PreencherCadastro")
+

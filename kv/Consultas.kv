@@ -1,0 +1,47 @@
+<Consultas>:
+    FloatLayout:
+        FloatLayout:
+            pos_hint: {"right":1, "top":1}
+            size_hint: 1, 0.2
+            canvas:
+                Color:
+                    rgb: (1,1,1,1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            Image:
+                pos_hint: {"right":0.45, "top":0.8}
+                size_hint: 0.5, 0.5
+                source: "icones/medico.png"
+            Label:
+                pos_hint: {"right":0.8, "top":0.75}
+                size_hint: 0.4, 0.4
+                bold: True
+                text: "Consultas Médicas"
+                font_size: 25
+                color: 0, 0, 0, 1
+            ImageButton:
+                pos_hint: {"right":0.15, "top":0.9}
+                size_hint: 0.2, 0.2
+                source: "icones/voltarpreto.png"
+                on_release: app.mudar_tela("Menu_Principal")
+                
+            #histórico de Consultas    
+            ScrollView:
+                pos_hint: {"right":1, "top":0}
+                size_hint: 1, 8
+                GridLayout:
+                    cols: 1
+                    id: lista_consultas
+                    #sempre será necessário passar esses valores ao criar um ScrollView dentro de um gridlayout (tabela)
+                    size_hint_y: None
+                    spacing:2,2
+                    height: self.minimum_height
+                    row_default_height: "90dp"
+                    row_force_default: True
+        ImageButton:
+            pos_hint: {"right":0.9, "top":0.15}
+            size_hint: 0.1, 0.1
+            source: "icones/adicionar.png"
+            on_release: app.mudar_tela("Adicionar_Consultas")
+

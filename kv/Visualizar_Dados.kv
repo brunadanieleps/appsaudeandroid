@@ -1,0 +1,63 @@
+<Visualizar_Dados>:
+    FloatLayout:
+        #mudar foto de perfil
+        ImageButton:
+            pos_hint: {"right":0.6, "top":0.98}
+            size_hint: 0.2, 0.3
+            source: "icones/foto_paciente_Bruna.jpg"
+            on_release: print('mudar foto de perfil')
+            id: foto_perfil_editar
+        Image:
+            pos_hint: {"right":1, "top":1.13}
+            size_hint: 0.5, 1
+            source: "icones/linha.png"
+        Image:
+            pos_hint: {"right":0.5, "top":1.13}
+            size_hint: 0.5, 1
+            source: "icones/linha.png"
+        #nome do paciente
+        Label:
+            pos_hint: {"right":0.85, "top":0.8}
+            size_hint: 0.7, 0.2
+            bold: True
+            text:"Bruna Daniele de Paula Salgado"
+            id: nome_paciente
+        
+        #ícone lápis para editar nome do paciente
+        ImageButton:
+            pos_hint: {"right":0.9, "top":0.7}
+            size_hint: 0.3, 0.32
+            source: "icones/lapis2.png"
+            on_release: app.mudar_tela("Editar_Dados")
+
+        ImageButton:
+            pos_hint: {"right":0.2, "top":1}
+            size_hint: 0.1, 0.1
+            source: "icones/voltarbranco.png"
+            on_release: app.mudar_tela("Menu_Principal")
+
+        #DADOS DO PACIENTE
+        Label:
+            pos_hint: {"right":0.29, "top":0.65}
+            size_hint: 0.3, 0.3
+            bold: True
+            text:"Endereço"
+        Label:
+            pos_hint: {"right":0.6, "top":0.44}
+            size_hint: 0.3, 0.3
+            text:"Av. Santa Terezinha, 0123\nArujá - SP"
+            id: tela_editar_endereco
+        Label:
+            pos_hint: {"right":0.31, "top":0.51}
+            size_hint: 0.3, 0.3
+            bold: True
+            text:"Documentos"
+        Label:
+            pos_hint: {"right":0.34, "top":0.37}
+            size_hint: 0.3, 0.3
+            bold: True
+            text:"Complementares"
+
+
+
+

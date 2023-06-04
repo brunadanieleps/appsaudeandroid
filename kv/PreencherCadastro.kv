@@ -1,0 +1,73 @@
+<PreencherCadastro>:
+    FloatLayout:
+        Image:
+            pos_hint: {"right":1, "top":0.9}
+            size_hint: 1, 0.2
+            source: "icones/logo.png"
+        Label: 
+            pos_hint: {"right":0.9, "top":0.7}
+            size_hint: 0.8, 0.1
+            text: "[b][color=#8DC6EA]Insira seus dados cadastrais[/color][/b]"
+            markup: True
+        Label: 
+            id:mensagem_erro_cadastro
+            pos_hint: {"right":0.9, "top":0.65}
+            size_hint: 0.8, 0.1
+            text: "[color=#000000]Mensagem Usuario[/color]"
+            markup: True
+        GridLayout:
+            pos_hint: {"right":0.95, "top":0.58}
+            size_hint: 0.9, 0.3
+            cols: 2 
+            rows: 10
+            halign: 'right'
+
+            Label:       
+                text: 'Nome:'
+                size_hint_x: None
+                width: 120
+                size: self.texture_size
+            TextInput:
+                id: nome
+            Label:
+                text: 'CPF:'
+                size_hint_x: None
+                width: 120
+                size: self.texture_size
+            TextInput:       
+                id: cpf
+            Label:
+                text: 'Data de nascimento:'
+                size_hint_x: None
+                width: 120
+                size: self.texture_size
+            TextInput:       
+                id: data_nascimento
+
+            Label:
+                text: 'Endereço:'
+                size_hint_x: None
+                width: 120
+                size: self.texture_size
+            TextInput:       
+                id: endereco
+            Label:
+                text: 'Município:'
+                size_hint_x: None
+                width: 120
+                size: self.texture_size
+            TextInput:       
+                id: municipio
+            Label:
+                text: 'Estado:'
+                size_hint_x: None
+                width: 120
+                size: self.texture_size
+            TextInput:       
+                id: estado
+        Button:
+            pos_hint: {"right":0.95, "top":0.2}
+            size_hint: 0.90, 0.05
+            text: "Cadastrar"
+            on_release: app.firebase.preencher_dados_cadastrais(nome.text,cpf.text,data_nascimento.text,endereco.text,municipio.text,estado.text)
+
