@@ -30,7 +30,7 @@ class MainApp(App):
     def carregar_infos_usuario(self):
         # try:
         #mapeando conexão com banco de dados firebase
-        print(f'cheguei aqui, estou acessando o link: https://aplicativosaudetcc-default-rtdb.firebaseio.com/{self.localId}.json')
+        # print(f'cheguei aqui, estou acessando o link: https://aplicativosaudetcc-default-rtdb.firebaseio.com/{self.localId}.json')
         requisicao=requests.get(f"https://aplicativosaudetcc-default-rtdb.firebaseio.com/{self.localId}.json?auth={self.idToken}")
         requisicao_dic=requisicao.json()
 
@@ -65,8 +65,8 @@ class MainApp(App):
         #Preencher vacinas
         try: #caso tenha vacinas, vou exibi-las
             vacinas=requisicao_dic['Vacinas']
-            print('olhar aqui para o dicionário de vacinas:')
-            print(vacinas)
+            # print('olhar aqui para o dicionário de vacinas:')
+            # print(vacinas)
             pagina_vacina=self.root.ids['Vacinacao']
             lista_vacinas=pagina_vacina.ids["lista_vacinas"]
             for vacina in vacinas.items():
@@ -80,30 +80,30 @@ class MainApp(App):
         #Preencher exames - fazer essa parte
         try: #caso tenha exames, vou exibi-las
             lista_exames_banco=requisicao_dic['Exames'][1:]
-            print('olhar aqui para o dicionário de exames:')
-            print(lista_exames_banco)
+            # print('olhar aqui para o dicionário de exames:')
+            # print(lista_exames_banco)
             pagina_exame=self.root.ids['Exames']
             lista_exames=pagina_exame.ids["lista_exames"]
             for exames in lista_exames_banco:
-                print(exames)
+                # print(exames)
                 banner=banner_exame(data=exames['data'],tipo=exames['tipo'],
                                     situacao=exames['situacao'])
                 lista_exames.add_widget(banner) #adicionando um item a lista de exames          
         except Exception as erro: #caso não tenha exames, preencher vazio
-            print(erro)
+            # print(erro)
 
         #Preencher consultas
         try: #caso tenha consultas, vou exibi-las
             lista_consultas_banco=requisicao_dic['Consultas'][1:]
-            print('olhar aqui para o dicionário de consultas:')
-            print(lista_consultas_banco)
+            # print('olhar aqui para o dicionário de consultas:')
+            # print(lista_consultas_banco)
             pagina_consulta=self.root.ids['Consultas']
             lista_vacinas=pagina_consulta.ids["lista_consultas"]
             for consulta in lista_consultas_banco:
                 banner=banner_consulta(data=consulta['data'],medico=consulta['medico'],
                                     horario=consulta['horario'],especialidade=consulta['especialidade'])
                 lista_vacinas.add_widget(banner) #adicionando um item a lista de consultas
-                print(lista_vacinas)        
+                # print(lista_vacinas)        
 
         except: #caso não tenha consultas, preencher vazio
             pass
@@ -130,7 +130,7 @@ class MainApp(App):
         '''
 
     def mudar_tela(self,id_tela):
-        print(id_tela)
+        # print(id_tela)
         #direcionando para o arquivo kv que vc quer, caso vc queira ir para o main é só usar o self.root
         gerenciador_telas=self.root.ids["screen_manager"]
         gerenciador_telas.current=id_tela
