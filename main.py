@@ -9,6 +9,10 @@ from bannerexames import banner_exame
 from functools import partial
 from firebase import MyFirebase
 import os
+import certifi
+
+
+os.environ['SSL_CERT_FILE']=certifi.where()
 
 #interface gráfica
 gui=Builder.load_file("main.kv")
