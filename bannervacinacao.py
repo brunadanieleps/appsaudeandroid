@@ -36,7 +36,7 @@ class banner_vacinacao(GridLayout):
 
         direita=FloatLayout()
         direita_label_lote=Label(pos_hint={"right":0.5, "top":0.9},
-                            size_hint=(0.5,0.5),text=f"Lote: {lote}")
+                            size_hint=(0.5,0.5),text=f"Profissional: {enfermeiro}")
         direita_label_local=Label(pos_hint={"right":0.5, "top":0.6},
                             size_hint=(0.5,0.5),text=f"Unidade: {local}")
         direita.add_widget(direita_label_lote)

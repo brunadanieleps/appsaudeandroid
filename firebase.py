@@ -83,7 +83,7 @@ class MyFirebase():
         today = datetime.today()
         idade=int((today - date_obj).days/365.25)
 
-        dic_dados_cadastrais=f'{{"nome":"{nome}","CPF":"{cpf}","nascimento":"{data_nascimento}","idade":"{idade}","endereco":"{endereco}","municipio":"{municipio}","sigla_estado":"{estado}","variavelvacina":"{0}","variavelexame":"{0}","variavelconsulta":"{0}"}}'
+        dic_dados_cadastrais=f'{{"nome":"{nome}","CPF":"{cpf}","nascimento":"{data_nascimento}","idade":"{idade}","endereco":"{endereco}","municipio":"{municipio}","sigla_estado":"{estado}","variavelvacina":"{0}","variavelexame":"{0}","variavelconsulta":"{0}","icone":"avatar.png","nome_plano":"","plano":false,"cartao_sus":"","n_carteirinha":""}}'
         # print(dic_dados_cadastrais)
         link=f"https://aplicativosaudetcc-default-rtdb.firebaseio.com/{localIdx}.json?auth={meu_aplicativo.idToken}"
         requests.patch(link,data=dic_dados_cadastrais)

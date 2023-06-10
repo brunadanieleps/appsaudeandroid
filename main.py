@@ -90,7 +90,7 @@ class MainApp(App):
                                     situacao=exames['situacao'])
                 lista_exames.add_widget(banner) #adicionando um item a lista de exames          
         except Exception as erro: #caso não tenha exames, preencher vazio
-            # print(erro)
+            print(erro)
 
         #Preencher consultas
         try: #caso tenha consultas, vou exibi-las
